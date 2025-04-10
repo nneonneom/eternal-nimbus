@@ -19,7 +19,7 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npx pnpm install
 
       - name: Get affected projects
         id: set-matrix
@@ -41,10 +41,10 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npx pnpm install
 
       - name: Build affected project ${{ matrix.project }}
-        run: pnpm nx build ${{ matrix.project }}
+        run: npx pnpm nx build ${{ matrix.project }}
 
       - name: Test affected project ${{ matrix.project }}
-        run: pnpm nx test ${{ matrix.project }}
+        run: npx pnpm nx test ${{ matrix.project }}
