@@ -11,8 +11,8 @@ on:
 jobs:
   get-affected:
     runs-on: ubuntu-latest
-#    outputs:
-#      affected-projects: ${{ steps.set-matrix.outputs.affected-projects }}
+    outputs:
+      affected-projects: ${{ steps.set-matrix.outputs.affected-projects }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,39 +32,35 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-#      - name: Retrieve main branch history
-#        if: github.ref != 'refs/heads/main'
-#        run: git rev-parse --verify main || git remote set-branches origin main && git fetch --depth 1 origin main && git branch main origin/main
-
       - name: Get affected projects
         id: set-matrix
-        run: npx nx show projects --affected --base=origin/main --head=HEAD --json
-#          affected=$()
-#          echo "affected-projects=$affected" >> $GITHUB_ENV
+        run: |
+          affected=$(npx nx show projects --affected --base=origin/main --head=HEAD --json)
+          echo "affected-projects=$affected" >> $GITHUB_ENV
 
-#  build:
-#    needs: get-affected
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        project: ${{ fromJson(needs.get-affected.outputs.affected-projects) }}
-#    steps:
-#      - uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0  # Ensure full history is cloned
-#
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: '20'
-#
-#      - name: Install pnpm
-#        run: npm install -g pnpm
-#
-#      - name: Install dependencies
-#        run: pnpm install
-#
-#      - name: Build affected project ${{ matrix.project }}
-#        run: pnpm nx build ${{ matrix.project }}
-#
-#      - name: Test affected project ${{ matrix.project }}
-#        run: pnpm nx test ${{ matrix.project }}
+  build:
+    needs: get-affected
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.get-affected.outputs.affected-projects) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensure full history is cloned
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build affected project ${{ matrix.project }}
+        run: pnpm nx build ${{ matrix.project }}
+
+      - name: Test affected project ${{ matrix.project }}
+        run: pnpm nx test ${{ matrix.project }}
