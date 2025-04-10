@@ -29,7 +29,8 @@ jobs:
       - name: Get affected projects
         id: set-matrix
         run: |
-          echo "affected-projects=['api-request-handler']" >> $GITHUB_ENV
+          affected=$(nx show projects --affected --json)
+          echo "affected-projects=$affected" >> $GITHUB_ENV
 
   build:
     needs: get-affected
