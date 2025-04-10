@@ -1,0 +1,50 @@
+name: Affected Projects CI
+
+on:
+  push:
+    branches: '**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  get-affected:
+    runs-on: ubuntu-latest
+    outputs:
+      affected-projects: ${{ steps.set-matrix.outputs.affected-projects }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Get affected projects
+        id: set-matrix
+        run: |
+          affected=$(npx nx show projects --affected --json)
+          echo "affected-projects=$affected" >> $GITHUB_ENV
+
+  build:
+    needs: get-affected
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.get-affected.outputs.affected-projects) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build affected project ${{ matrix.project }}
+        run: pnpm nx build ${{ matrix.project }}
+
+      - name: Test affected project ${{ matrix.project }}
+        run: pnpm nx test ${{ matrix.project }}

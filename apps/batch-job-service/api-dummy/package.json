@@ -1,10 +1,10 @@
 {
-  "name": "api-request-handler",
+  "name": "api-dummy",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "build": "pnpm clean && pnpm cdk synth",
-    "test": "echo 'api-request-handler tests are running...'",
+    "test": "echo \"api-dummy tests are running...\"",
     "clean": "rm -rf dist cdk.out"
   },
   "main": "index.js",
