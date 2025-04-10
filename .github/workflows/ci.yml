@@ -15,12 +15,10 @@ jobs:
       affected-projects: ${{ steps.set-matrix.outputs.affected-projects }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Ensure full history is cloned
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -47,7 +45,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install pnpm
         run: npm install -g pnpm
