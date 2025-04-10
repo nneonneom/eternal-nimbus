@@ -24,6 +24,7 @@ jobs:
       - name: Get affected projects
         id: set-matrix
         run: |
+          npx nx show projects --affected --json
           affected=$(npx nx show projects --affected --json)
           echo "affected-projects=$affected" >> $GITHUB_ENV
 
