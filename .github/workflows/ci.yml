@@ -9,7 +9,7 @@ on:
       - main  # Trigger on PRs targeting the `main` branch
 
 jobs:
-  get-affected:
+  get-affected-projects:
     runs-on: ubuntu-latest
     outputs:
       affected-projects: ${{ steps.set-matrix.outputs.affected-projects }}
@@ -38,11 +38,11 @@ jobs:
           echo "affected-projects=$(npx nx show projects --affected --base=origin/main --head=HEAD --json)" >> $GITHUB_OUTPUT
 
   build:
-    needs: get-affected
+    needs: get-affected-projects
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: ${{ fromJson(needs.get-affected.outputs.affected-projects) }}
+        project: ${{ fromJson(needs.get-affected-projects.outputs.affected-projects) }}
     steps:
       - uses: actions/checkout@v4
         with:
