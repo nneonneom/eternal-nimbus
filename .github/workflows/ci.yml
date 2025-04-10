@@ -29,7 +29,7 @@ jobs:
       - name: Get affected projects
         id: set-matrix
         run: |
-          echo "affected-projects=["api-request-handler"] >> $GITHUB_ENV
+          echo "affected-projects=['api-request-handler'] >> $GITHUB_ENV
 
   build:
     needs: get-affected
