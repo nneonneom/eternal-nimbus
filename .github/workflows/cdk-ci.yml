@@ -10,7 +10,7 @@ on:
 
 jobs:
   get-affected-projects:
-    uses: ./.github/workflows/get-affected-projects.yml
+    uses: nneonneom/spicy-nx-workflows/.github/workflows/get-affected-projects.yml@v1
     with:
       nx-project-tag: build-type:cdk
       node-version: '20'
