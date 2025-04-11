@@ -1,16 +1,9 @@
 {
-  "name": "api-hehe",
+  "name": "batch-job-service-infra",
   "tags": [
-    "build-type:cdk"
+    "build-type:cloudblocks"
   ],
   "targets": {
-    "build": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm build",
-        "cwd": "{workspaceRoot}/{projectRoot}"
-      }
-    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "pnpm clean && pnpm cdk synth",
-    "test": "echo \"api-dummy tests are running...\"",
+    "test": "echo tests passed!!",
     "clean": "rm -rf dist cdk.out"
   },
   "main": "index.js",

@@ -35,7 +35,7 @@ jobs:
       - name: Get affected projects
         id: set-matrix
         run: |
-          echo "affected-projects=$(npx nx show projects --affected --base=origin/main --head=HEAD --json)" >> $GITHUB_OUTPUT
+          echo "affected-projects=$(npx nx show projects --affected --projects tag:build-type:cdk --base=origin/main --head=HEAD --json)" >> $GITHUB_OUTPUT
 
   build:
     needs: get-affected-projects
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensure full history is cloned
+          fetch-depth: 1
 
       - uses: actions/setup-node@v4
         with:
