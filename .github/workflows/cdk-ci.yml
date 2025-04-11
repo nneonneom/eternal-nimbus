@@ -12,7 +12,7 @@ jobs:
   get-affected-projects:
     uses: ./.github/workflows/get-affected-projects.yml
     with:
-      nx-project-tag: build-type:cloudblocks
+      nx-project-tag: build-type:cdk
       node-version: '20'
 
   build:
