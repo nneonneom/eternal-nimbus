@@ -1,4 +1,4 @@
-name: Affected Cloudblock Projects CI
+name: Cloudblock Projects CI
 
 on:
   push:
