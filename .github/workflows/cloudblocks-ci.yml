@@ -1,4 +1,4 @@
-name: Affected Projects CI
+name: Affected Cloudblock Projects CI
 
 on:
   push:
@@ -57,9 +57,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Build affected project ${{ matrix.project }}
-        run: pnpm nx build ${{ matrix.project }}
 
       - name: Test affected project ${{ matrix.project }}
         run: pnpm nx test ${{ matrix.project }}

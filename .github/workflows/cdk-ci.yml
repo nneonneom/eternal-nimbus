@@ -1,4 +1,4 @@
-name: Affected Projects CI
+name: Affected CDK Projects CI
 
 on:
   push:
