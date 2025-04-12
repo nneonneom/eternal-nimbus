@@ -1,7 +1,7 @@
 {
   "name": "batch-job-service-infra",
   "tags": [
-    "build-type:cloudblocks"
+    "build-type:cloud-blocks"
   ],
   "targets": {
     "test": {

@@ -12,7 +12,7 @@ jobs:
   get-affected-projects:
     uses: nneonneom/spicy-nx-workflows/.github/workflows/get-affected-projects.yml@v1
     with:
-      nx-project-tag: build-type:cloudblocks
+      nx-project-tag: build-type:cloud-blocks
       node-version: '20'
 
   build:
