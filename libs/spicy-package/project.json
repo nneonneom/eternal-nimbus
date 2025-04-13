@@ -1,7 +1,9 @@
 {
   "name": "spicy-package",
   "tags": [
-    "build-type:lib"
+    "build-type:lib",
+    "spicy-package",
+    "lib"
   ],
   "targets": {
     "test": {
