@@ -1,5 +1,5 @@
 {
-  "name": "batch-job-service:batch-job-invoker",
+  "name": "batch-job-invoker",
   "tags": [
     "build-type:cdk",
     "batch-job-service",

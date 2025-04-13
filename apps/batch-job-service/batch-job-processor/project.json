@@ -1,5 +1,5 @@
 {
-  "name": "batch-job-service:batch-job-processor",
+  "name": "batch-job-processor",
   "tags": [
     "build-type:cdk",
     "batch-job-service",

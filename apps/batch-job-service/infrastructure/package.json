@@ -1,5 +1,5 @@
 {
-  "name": "batch-job-service-infra",
+  "name": "batch-job-shared-infra",
   "version": "1.0.0",
   "description": "",
   "scripts": {

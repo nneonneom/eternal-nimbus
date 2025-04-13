@@ -1,8 +1,9 @@
 {
-  "name": "batch-job-service:infra-shared",
+  "name": "batch-job-shared-infra",
   "tags": [
     "build-type:cdk",
     "batch-job-service",
+    "batch-job-shared-infra",
     "infra-shared"
   ],
   "targets": {
