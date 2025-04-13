@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as esbuild from 'esbuild';
 import { Construct } from 'constructs';
 
-export class LambdaStack extends Stack {
+export class BatchJobInvokerStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 

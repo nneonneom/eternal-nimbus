@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { LambdaStack } from './lambda-stack.cdk';
+import { BatchJobSchedulerStack } from './batch-job-scheduler.stack.cdk';
+import { SharedInfraStack } from '../../infrastructure/src';
 
 const app = new cdk.App();
-new LambdaStack(app, 'MyCdkAppStack');
+new SharedInfraStack(app, 'BatchJobService-SharedInfraStack');
+new BatchJobSchedulerStack(app, 'BatchJobService-BatchJobSchedulerStack');

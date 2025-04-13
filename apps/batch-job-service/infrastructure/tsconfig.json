@@ -5,6 +5,6 @@
     "outDir": "dist"
   },
   "include": [
-    "../infrastructure/src/shared",
+    "../**/*.stack.cdk.ts"
   ]
 }
