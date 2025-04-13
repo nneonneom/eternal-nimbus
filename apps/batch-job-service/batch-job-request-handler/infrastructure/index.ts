@@ -1,1 +1,1 @@
-export * from './api-request-handler.stack.cdk'
+export * from './batch-job-request-handler.stack.cdk'
