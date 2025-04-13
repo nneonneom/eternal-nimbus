@@ -1,11 +1,9 @@
 {
-  "name": "batch-job-service-infra",
+  "name": "spicy-package",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "pnpm clean && pnpm cdk synth",
-    "test": "echo tests passed!!",
-    "clean": "rm -rf dist cdk.out"
+    "test": "echo tests passed!!"
   },
   "keywords": [],
   "author": "",

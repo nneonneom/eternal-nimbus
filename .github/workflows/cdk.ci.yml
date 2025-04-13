@@ -36,8 +36,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build affected project ${{ matrix.project }}
-        run: pnpm nx build ${{ matrix.project }}
-
       - name: Test affected project ${{ matrix.project }}
         run: pnpm nx test ${{ matrix.project }}
+
+      - name: Build affected project ${{ matrix.project }}
+        run: pnpm nx build ${{ matrix.project }}

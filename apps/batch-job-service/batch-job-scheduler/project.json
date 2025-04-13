@@ -1,7 +1,10 @@
 {
-  "name": "api-dummy",
+  "name": "batch-job-service:batch-job-scheduler",
   "tags": [
-    "build-type:cdk"
+    "build-type:cdk",
+    "batch-job-service",
+    "batch-job-scheduler",
+    "scheduler"
   ],
   "targets": {
     "build": {
