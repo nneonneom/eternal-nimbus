@@ -1,8 +1,8 @@
-# Eternal Nimbus 
-
 <p align="center">
 <img src="https://i.pinimg.com/736x/4f/d8/06/4fd80618d13ee1bd6dba102ab5a7c143.jpg">
 </p>
+
+# Eternal Nimbus 
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
 
