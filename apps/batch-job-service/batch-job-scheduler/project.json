@@ -1,5 +1,5 @@
 {
-  "name": "batch-job-service:batch-job-scheduler",
+  "name": "batch-job-scheduler",
   "tags": [
     "build-type:cdk",
     "batch-job-service",
