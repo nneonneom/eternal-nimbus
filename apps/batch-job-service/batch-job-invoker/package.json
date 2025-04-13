@@ -1,5 +1,5 @@
 {
-  "name": "api-request-handler",
+  "name": "batch-job-invoker",
   "version": "1.0.0",
   "description": "",
   "scripts": {

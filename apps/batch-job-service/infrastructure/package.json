@@ -1,5 +1,5 @@
 {
-  "name": "api-request-handler",
+  "name": "batch-job-service-infra",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,7 +7,6 @@
     "test": "echo tests passed!!",
     "clean": "rm -rf dist cdk.out"
   },
-  "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

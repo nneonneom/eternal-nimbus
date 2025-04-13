@@ -1,10 +1,9 @@
 {
-  "name": "batch-job-service:api-request-handler",
+  "name": "batch-job-service:infra-shared",
   "tags": [
     "build-type:cdk",
     "batch-job-service",
-    "api-request-handler",
-    "req-handler"
+    "infra-shared"
   ],
   "targets": {
     "build": {

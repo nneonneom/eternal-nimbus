@@ -1,0 +1,43 @@
+name: CDK Projects CI
+
+on:
+  push:
+    branches: 
+      - '**'  # Trigger on pushes to any branch
+  pull_request:
+    branches: 
+      - main  # Trigger on PRs targeting the `main` branch
+
+jobs:
+  get-affected-projects:
+    uses: nneonneom/spicy-nx-workflows/.github/workflows/get-affected-projects.yml@v1
+    with:
+      nx-project-tag: build-type:cdk
+      node-version: '20'
+
+  build:
+    needs: get-affected-projects
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.get-affected-projects.outputs.affected-projects) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test affected project ${{ matrix.project }}
+        run: pnpm nx test ${{ matrix.project }}
+
+      - name: Build affected project ${{ matrix.project }}
+        run: pnpm nx build ${{ matrix.project }}

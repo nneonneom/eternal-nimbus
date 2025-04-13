@@ -1,10 +1,10 @@
 {
-  "name": "batch-job-service:api-request-handler",
+  "name": "batch-job-service:batch-job-invoker",
   "tags": [
     "build-type:cdk",
     "batch-job-service",
-    "api-request-handler",
-    "req-handler"
+    "batch-job-invoker",
+    "invoker"
   ],
   "targets": {
     "build": {
