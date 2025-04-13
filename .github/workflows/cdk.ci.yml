@@ -2,11 +2,11 @@ name: CDK Projects CI
 
 on:
   push:
-    branches: 
-      - '**'  # Trigger on pushes to any branch
+    branches-ignore:
+      - main  
   pull_request:
-    branches: 
-      - main  # Trigger on PRs targeting the `main` branch
+    branches:
+      - main  
 
 jobs:
   get-affected-projects:
